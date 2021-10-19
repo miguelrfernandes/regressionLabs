@@ -21,6 +21,13 @@ class Batch:
         self.x_data.append(x)
         self.y_data.append(y)
         return x, y
+    
+    def add_non_linear_sample2(self, sigma) -> Tuple[float, float]:
+        x = np.random.random()
+        y = self.g.generate_non_linear_samples2(x, sigma)
+        self.x_data.append(x)
+        self.y_data.append(y)
+        return x, y
 
     def make_nonlinear_batch_data(self) -> None:
         """ 
