@@ -39,6 +39,7 @@ class Batch:
         Generate a batch of non linear data and store it into numpy structures
         """
         self.reset_batch()
+        print(f"Sigma Changed in Non Linear = {sigma}")
         for i in range(self.batch_size):
             # Draw a random sample on the interval [0,1]
             x = np.random.random()
