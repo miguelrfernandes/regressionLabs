@@ -20,7 +20,7 @@ class SampleGenerator:
             
         """
         y = self.c0 - x - math.sin(self.c1 * math.pi * x ** 3) * math.cos(self.c2 * math.pi * x ** 3) * math.exp(-x ** 4)
-        sigma = 0.1
+        sigma = 0.3
         noise = sigma * np.random.random()
         y_noisy = y + noise
         return y_noisy
