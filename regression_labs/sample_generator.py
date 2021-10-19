@@ -51,6 +51,7 @@ class SampleGenerator:
         """
         y = self.c0 - x - math.sin(self.c1 * math.pi * x ** 3) * math.cos(self.c2 * math.pi * x ** 3) * math.exp(-x ** 4)
         #sigma = 0.3
+        print(f"Sigma Changed in Non Linear = {sigma}")
         noise = sigma * np.random.random()
         y_noisy = y + noise
         return y_noisy
@@ -65,6 +66,7 @@ class SampleGenerator:
 
         """
         y = self.c3 * x + self.c1
+        print(f"Sigma Changed in Linear = {sigma}")
         #sigma = 0.5
         noise = sigma * np.random.random()
         y_noisy = y + noise
