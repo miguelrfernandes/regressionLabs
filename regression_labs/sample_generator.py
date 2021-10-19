@@ -39,3 +39,33 @@ class SampleGenerator:
         noise = sigma * np.random.random()
         y_noisy = y + noise
         return y_noisy
+    
+    def generate_non_linear_samples2(self, x, sigma):
+        """
+        Generate a noisy nonlinear data sample from a given data point in the range [0,1]
+
+        :param x: A scalar dependent variable for which to calculate the output y_noisy
+        
+        :returns: The output with Gaussian noise added
+            
+        """
+        y = self.c0 - x - math.sin(self.c1 * math.pi * x ** 3) * math.cos(self.c2 * math.pi * x ** 3) * math.exp(-x ** 4)
+        #sigma = 0.3
+        noise = sigma * np.random.random()
+        y_noisy = y + noise
+        return y_noisy
+
+    def generate_linear_samples2(self, x, sigma):
+        """
+        Generate a noisy linear data sample from a given data point in the range [0,1]
+
+        :param x: A scalar dependent variable for which to calculate the output y_noisy
+
+        :returns: The output with Gaussian noise added
+
+        """
+        y = self.c3 * x + self.c1
+        #sigma = 0.5
+        noise = sigma * np.random.random()
+        y_noisy = y + noise
+        return y_noisy
